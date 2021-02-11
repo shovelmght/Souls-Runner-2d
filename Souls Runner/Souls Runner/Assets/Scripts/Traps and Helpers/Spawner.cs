@@ -6,6 +6,7 @@ namespace LesserKnown.TrapsAndHelpers
 {
     public class Spawner : MonoBehaviour
     {
+        public float reset_delay = 6f;
         public float spawn_delay = 1f;
         private float current_delay = 0f;
         public int pool_amount = 10;
@@ -44,7 +45,10 @@ namespace LesserKnown.TrapsAndHelpers
             int _index = pool.FindIndex(x => { return !x.gameObject.activeSelf; });
 
             if (_index != -1)
+            {
                 pool[_index].Move();
+                pool[_index].Reset_Timer(reset_delay);
+            }
         }
 
         private void Move_Static()

@@ -10,13 +10,24 @@ namespace LesserKnown.TrapsAndHelpers
         public Vector3 movement_vector;
         private bool move_bool;
 
+       public void Reset_Timer(float reset_delay)
+        {
+            StartCoroutine(Reset_TimerIE(reset_delay));
+        }
+
+        private IEnumerator Reset_TimerIE(float reset_delay)
+        {
+            yield return new WaitForSeconds(reset_delay);
+            Reset_Object();
+        }
+
         public void Move()
         {
             gameObject.SetActive(true);
             StartCoroutine(MoveIE());
         }
         
-        public void Reset()
+        private void Reset_Object()
         {
             move_bool = false;
             transform.localPosition = new Vector3(0,0,0);
