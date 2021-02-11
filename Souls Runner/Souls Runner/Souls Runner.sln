@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Edi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Placeholder.EditorTests", "Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csproj", "{0E43280C-0037-FAE3-CCFF-B24556F3E036}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{709CEC91-7194-F7C0-6E9F-ED73B2A75305}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{0E43280C-0037-FAE3-CCFF-B24556F3E036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E43280C-0037-FAE3-CCFF-B24556F3E036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E43280C-0037-FAE3-CCFF-B24556F3E036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{709CEC91-7194-F7C0-6E9F-ED73B2A75305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709CEC91-7194-F7C0-6E9F-ED73B2A75305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709CEC91-7194-F7C0-6E9F-ED73B2A75305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709CEC91-7194-F7C0-6E9F-ED73B2A75305}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

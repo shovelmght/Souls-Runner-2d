@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using LesserKnown.Public;
 using UnityEngine.SceneManagement;
+using LesserKnown.UI;
 namespace LesserKnown.Manager
 {
     public class GameManagement : MonoBehaviour
     {
         public GameObject health_obj;
         public Transform health_holder;
+        public GameObject mobile_ui;
+
+        private GameObject player;
+        private UIManager ui_manager;
 
         private List<GameObject> health_list = new List<GameObject>();
 
         private void Start()
         {
+            player = GameObject.FindGameObjectWithTag("Player");
+            ui_manager = GetComponent<UIManager>();
+            
+            if (SystemInfo.deviceType != DeviceType.Handheld)
+                mobile_ui.SetActive(false);
+            
+
             for (int i = 0; i < PublicVariables.health; i++)
             {
                 var _copy = Instantiate(health_obj);
@@ -35,12 +47,23 @@ namespace LesserKnown.Manager
 
             yield return new WaitForSeconds(.2f);
             Destroy(health_list[_index]);
-            health_list.RemoveAt(_index);
-
             PublicVariables.Lose_Health(1);
 
             if (PublicVariables.health == 0)
-                SceneManager.LoadScene(0);
+            {
+                Game_Over(false);
+            }
+                
+        }
+
+        public void Game_Over(bool won)
+        {
+            player.SetActive(false);
+
+            if (!won)
+                ui_manager.Game_Lost();
+            else if (won)
+                ui_manager.Game_Won();
         }
 
         private void OnLevelWasLoaded(int level)
