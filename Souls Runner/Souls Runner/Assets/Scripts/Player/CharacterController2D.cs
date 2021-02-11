@@ -33,6 +33,10 @@ namespace LesserKnown.Player
         private void Update()
         {
             anim.Move(rb.velocity.magnitude > 0);
+
+
+            if (Input.GetKeyDown(KeyCode.M))
+                Die();
         }
 
         public void Move(float movement_force)
