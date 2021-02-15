@@ -20,7 +20,7 @@ namespace LesserKnown.TrapsAndHelpers
 
             if(collision.tag == "Player")
             {
-                collision.GetComponent<CharacterController2D>().Checkpoint(transform.position);
+               /* collision.GetComponent<CharacterController2D>().Checkpoint(transform.position);*/
                 isSet = true;
                 anim.SetTrigger("Activate");
             }

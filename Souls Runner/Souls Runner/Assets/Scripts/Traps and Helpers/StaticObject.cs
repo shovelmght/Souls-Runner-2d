@@ -35,7 +35,7 @@ namespace LesserKnown.TrapsAndHelpers
         {
             if(collision.tag == "Player")
             {
-                collision.GetComponent<CharacterController2D>().Die();
+               /* collision.GetComponent<CharacterController2D>().Die();*/
             }
         }
 

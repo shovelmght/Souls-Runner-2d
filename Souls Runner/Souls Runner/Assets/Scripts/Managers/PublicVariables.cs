@@ -10,9 +10,14 @@ namespace LesserKnown.Public
     {
         public static int health = 10;
 
-        public static void Lose_Health(int amount)
+        public static bool Lose_Health(int amount)
         {
             health -= amount;
+
+            if (health == 0)
+                return true;
+
+            return false;
         }
 
         public static void Reset_Level(int amount)

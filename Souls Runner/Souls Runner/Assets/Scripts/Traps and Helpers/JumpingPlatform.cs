@@ -39,7 +39,7 @@ namespace LesserKnown.TrapsAndHelpers {
 
             anim.SetTrigger("Activate");
             yield return new WaitForSeconds(.1f);
-            controller.Jump(new Vector2(0, jump_force));            
+            controller.Jump(jump_force);           
         }
     }
 }

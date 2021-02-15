@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LesserKnown.Camera;
 
 namespace LesserKnown.Player
 {
@@ -10,63 +11,60 @@ namespace LesserKnown.Player
 
         [Header("Player Settings")]
         public float movement_speed = 10f;
+        public float climbing_speed = 8f;
         public float jump_force = 30f;
+        public float wall_jump_force = 8f;
         [Space(10)]
         [Header("Player Input Keys")]
         public KeyCode jump_key;
 
-        private float h;
-        private float v;
-        private Joystick joystick;
+        public bool character_swap;
+        private CameraFollow cam;
 
         private void Start()
         {
             controller = GetComponent<CharacterController2D>();
-            joystick = FindObjectOfType<Joystick>();
+            cam = UnityEngine.Camera.main.GetComponent<CameraFollow>();
+
+            Swap_Character();
+
         }
-
-
 
         private void Update()
         {
-            
-            if (SystemInfo.deviceType == DeviceType.Desktop)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                h = Input.GetAxisRaw("Horizontal");
-                v = Input.GetAxisRaw("Vertical");
-            }else if (SystemInfo.deviceType == DeviceType.Handheld)
-            {
-                h = joystick.Horizontal;
-                v = joystick.Vertical;
+                Swap_Character();
             }
 
-            if (h > 0)
-                controller.Flip(false);
-            else if (h < 0)
-                controller.Flip(true);
+            if (!character_swap)
+                return;
 
-            if (SystemInfo.deviceType == DeviceType.Desktop)
-            {
-                if (Input.GetKeyDown(jump_key))
-                    Jump();
-            }
-        }
+            if (Input.GetKeyDown(jump_key))
+                controller.Jump(jump_force);
 
-    
-
-        public void Jump()
-        {
-            controller.Jump(new Vector2(0, jump_force));
+            if (controller.wall_jump)
+                controller.Jump_Wall(new Vector2(wall_jump_force, jump_force));
         }
 
         private void FixedUpdate()
         {
-            controller.Move(h * Time.deltaTime * movement_speed);
+            if (!character_swap)
+                return;
 
-            if (v != 0) 
-                controller.Wall_Run(v * Time.deltaTime * movement_speed);
-            else
-                controller.is_wall_running = false;
+            var h = Input.GetAxisRaw("Horizontal");
+            var v = Input.GetAxisRaw("Vertical");
+
+            controller.Move(h * movement_speed);
+            controller.Climb(v * climbing_speed);
+        }
+
+        public void Swap_Character()
+        {
+            character_swap = !character_swap;
+
+            if(character_swap)
+            cam.Set_Camera_Local(transform);
         }
     }
 }

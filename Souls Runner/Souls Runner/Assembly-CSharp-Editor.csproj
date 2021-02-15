@@ -56,12 +56,36 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorField.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNetworkingAboutEditor.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\IFNSerializable.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNetworkingEditor.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassIdentity.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassFieldRPCValue.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ValidationResult.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNRPCTypes.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeBaseClassType.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\SimpleJSONEditor.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassRewindValue.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassRPCValue.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassFieldValue.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeAcceptableRPCTypes.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassObject.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorButton.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorRPCField.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeAcceptableFieldTypes.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\version.txt" />
+     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\NetworkObjectTemplate.txt" />
+     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\NetworkBehaviorTemplate.txt" />
+     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\StandAloneNetworkBehaviorTemplate.txt" />
+     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\NetworkManagerTemplate.txt" />
+     <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\NetworkObjectFactoryTemplate.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.3f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -754,14 +778,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{0785FBB9-9386-408D-5480-4248F6AB8A71}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{0D9B47DD-1E33-8D58-52E1-E83074D6CDEA}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
-      <Project>{5AB059A5-0AAD-E085-5231-A885985A7CB6}</Project>
-      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
