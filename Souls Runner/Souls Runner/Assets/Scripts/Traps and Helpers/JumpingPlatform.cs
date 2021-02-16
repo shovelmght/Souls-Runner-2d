@@ -4,6 +4,10 @@ using UnityEngine;
 using LesserKnown.Player;
 
 namespace LesserKnown.TrapsAndHelpers {
+    /// <summary>
+    /// This class controlls the jumping platforms
+    /// If you have better ideas on how to do it you're welcome to change it
+    /// </summary>
     public class JumpingPlatform : MonoBehaviour
     {
         public float trigger_delay = 1f;

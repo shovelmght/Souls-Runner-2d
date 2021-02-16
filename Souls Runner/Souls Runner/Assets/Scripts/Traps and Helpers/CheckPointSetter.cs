@@ -3,6 +3,11 @@ using LesserKnown.Player;
 
 namespace LesserKnown.TrapsAndHelpers
 {
+    /// <summary>
+    /// This is a checkpoint
+    /// I'm not sure if we're going to use them
+    /// But if we are, this is it
+    /// </summary>
     public class CheckPointSetter: MonoBehaviour
     {
         private bool isSet;

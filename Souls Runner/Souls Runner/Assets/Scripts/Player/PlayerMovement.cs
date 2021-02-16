@@ -5,6 +5,10 @@ using LesserKnown.Camera;
 
 namespace LesserKnown.Player
 {
+    /// <summary>
+    /// This function controlls all player actions
+    /// I know it's named movement, but it does pretty everything
+    /// </summary>
     public class PlayerMovement : MonoBehaviour
     {
         private CharacterController2D controller;
@@ -18,7 +22,6 @@ namespace LesserKnown.Player
         [Header("Player Input Keys")]
         public KeyCode jump_key;
 
-        public bool character_swap;
         private CameraFollow cam;
 
         private void Start()
@@ -26,18 +29,11 @@ namespace LesserKnown.Player
             controller = GetComponent<CharacterController2D>();
             cam = UnityEngine.Camera.main.GetComponent<CameraFollow>();
 
-            Swap_Character();
-
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                Swap_Character();
-            }
-
-            if (!character_swap)
+            if (!controller.is_active)
                 return;
 
             if (Input.GetKeyDown(jump_key))
@@ -45,11 +41,14 @@ namespace LesserKnown.Player
 
             if (controller.wall_jump)
                 controller.Jump_Wall(new Vector2(wall_jump_force, jump_force));
+
+            if (controller.is_fighter && Input.GetKeyDown(KeyCode.F))
+                controller.Attacm();
         }
 
         private void FixedUpdate()
         {
-            if (!character_swap)
+            if (!controller.is_active)
                 return;
 
             var h = Input.GetAxisRaw("Horizontal");
@@ -59,12 +58,6 @@ namespace LesserKnown.Player
             controller.Climb(v * climbing_speed);
         }
 
-        public void Swap_Character()
-        {
-            character_swap = !character_swap;
-
-            if(character_swap)
-            cam.Set_Camera_Local(transform);
-        }
+       
     }
 }

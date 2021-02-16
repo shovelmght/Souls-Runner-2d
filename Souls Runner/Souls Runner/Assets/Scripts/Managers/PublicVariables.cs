@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace LesserKnown.Public
 {
+    /// <summary>
+    /// This class holds alld the public static variables
+    /// For now only the health
+    /// </summary>
     public static class PublicVariables
     {
         public static int health = 10;

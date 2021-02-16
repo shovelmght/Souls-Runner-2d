@@ -1,37 +1,84 @@
 using LesserKnown.Public;
 using UnityEngine;
-using LesserKnown.TrapsAndHelpers;
 using System.Collections;
-using LesserKnown.Network;
+using LesserKnown.Camera;
 
 namespace LesserKnown.Player
 {
+    /// <summary>
+    /// This is a custom character controller
+    /// It controlls all the player movements and the player behaviours
+    /// </summary>
     public class CharacterController2D : MonoBehaviour
     {
+
         private Rigidbody2D rb;
         private Collider2D p_collider;
         private SpriteRenderer player_sprite;
         private AnimManager anim_manager;
+        /// <summary>
+        /// This is the CameraFollow script from LesserKnown.Camera attatched to the camera
+        /// </summary>
+        private CameraFollow cam;
+
+
+        [Header("Layers")]
         [Tooltip("Used to detect the terrain")]
         public LayerMask ground;
+        [Tooltip("Used to detect the platforms")]
         public LayerMask platform;
 
         [Space(10)]
         [Header("Modifiers")]
         [Range(1f,2f)]
+        /// <summary>
+        /// This is the fall speed modifier
+        /// </summary>
         public float fall_modifier;
 
         [Space(10)]
-       // private PlayerNetwork player_network;
+        // private PlayerNetwork player_network;
+
+        /// <summary>
+        /// This checks if the player can do a wall jump
+        /// </summary>
         [HideInInspector]
         public bool wall_jump;
+        /// <summary>
+        /// The modifier for the wall jump, depending on it's direction
+        /// </summary>
         private float touching_wall;
+        /// <summary>
+        /// Verifies if the player can climb a ladder
+        /// </summary>
         private bool can_climb_ladder;
+        /// <summary>
+        /// Verifies if the player is climbing a ladder
+        /// </summary>
         [HideInInspector]
         public bool is_climbing_ladder;
+        /// <summary>
+        /// This is for testing only, activate to not take damage
+        /// Still need to implement it
+        /// </summary>
         [HideInInspector]
         public bool is_invicible;
+        /// <summary>
+        /// Verfies if the player is looking right or left
+        /// It's for local use only, in network you need to use the network variable
+        /// </summary>
         private bool local_left;
+
+        /// <summary>
+        /// These boundaries detect if the player is touching something and from what direction
+        /// </summary>
+        #region Player Boundaries
+        [Space]
+        [Header("Player Options")]
+        public bool is_active;
+        public bool is_fighter;
+        public GameObject player_indicator;
+        
 
         [Space(10)]
         [Header("Boundaries Ground")]
@@ -47,15 +94,20 @@ namespace LesserKnown.Player
         [Header("Boundaries Left")]
         public Vector2 boundary_size_l;
         public Vector2 boundary_placement_l;
-
+        #endregion
 
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             player_sprite = GetComponent<SpriteRenderer>();
             anim_manager = GetComponent<AnimManager>();
+
+            //This is for network use only, it's not for this project
            // player_network = GetComponent<PlayerNetwork>();
             p_collider = GetComponent<Collider2D>();
+            cam = UnityEngine.Camera.main.GetComponent<CameraFollow>();
+
+            Swap_Character();
         }
 
         private void Update()
@@ -63,9 +115,41 @@ namespace LesserKnown.Player
             //player_sprite.flipX = player_network.left;
             player_sprite.flipX = local_left;
 
+            //This changes the y velocity when touching a wall so it gives the feeling the player is sliding on the wall
             if (IsWallFalling())
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / fall_modifier);
 
+            Climbing_Ladder();
+
+            //This flips the sprite according to the moving direction
+            if (IsWallFalling() && IsTouchingLeft())
+                Flip(false);
+            else if (IsWallFalling() && IsTouchingRight())
+                Flip(true);
+
+
+            //This triggers the move animation
+            anim_manager.Move(rb.velocity.magnitude > 0 && (IsGrounded() || IsOnPlatform()));
+
+
+            //This is the indicator on top of the player
+            player_indicator.SetActive(is_active);
+
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Swap_Character();
+            }
+
+        }
+
+        /// <summary>
+        /// Changes the player collider when climbing a ladder
+        /// When on the ladder it's trigger so it doesn't interact with the terrain
+        /// This is done for the platforms when you need to go down
+        /// </summary>
+        private void Climbing_Ladder()
+        {
             if (is_climbing_ladder)
             {
                 p_collider.isTrigger = true;
@@ -76,23 +160,27 @@ namespace LesserKnown.Player
                 p_collider.isTrigger = false;
                 rb.gravityScale = 6.5f;
             }
+        }
 
-            if (IsWallFalling() && IsTouchingLeft())
-                Flip(false);
-            else if (IsWallFalling() && IsTouchingRight())
-                Flip(true);
 
-            anim_manager.Move(rb.velocity.magnitude > 0 && (IsGrounded() || IsOnPlatform()));
+        /// <summary>
+        /// Swaps the player
+        /// </summary>
+        public void Swap_Character()
+        {
+            is_active = !is_active;
 
+            if (is_active)
+                cam.Set_Camera_Local(transform);
         }
 
         /// <summary>
-        /// Move player
+        /// Move player, also checks for all the movement changes
         /// </summary>
         /// <param name="movement_speed">The player movement speed</param>
         public void Move(float movement_speed)
         {
-            if (wall_jump)
+            if (wall_jump || anim_manager.Is_Attacking())
                 return;
 
             anim_manager.Climb(false);
@@ -287,7 +375,16 @@ namespace LesserKnown.Player
                 can_climb_ladder = false;
         }
 
-        
+        #region Warrior Region
+        public void Attacm()
+        {
+            if (anim_manager.Is_Attacking())
+                return;
+
+            anim_manager.Attack();
+        }
+        #endregion
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.green;

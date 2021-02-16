@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace LesserKnown.TrapsAndHelpers
 {
+    /// <summary>
+    /// A class that's used to spwan any object
+    /// It uses a pool for more efficiency instead of Instantiate
+    /// </summary>
     public class Spawner : MonoBehaviour
     {
         public float reset_delay = 6f;

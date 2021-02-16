@@ -4,6 +4,10 @@ using System.Collections;
 
 namespace LesserKnown.TrapsAndHelpers 
 {
+    /// <summary>
+    /// This class makes an object move in the direction that you want
+    /// Usually it's used with Spwaner class
+    /// </summary>
     public class Mover : MonoBehaviour
     {
         [HideInInspector]

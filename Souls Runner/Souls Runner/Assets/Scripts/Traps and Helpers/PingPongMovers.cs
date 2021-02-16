@@ -2,6 +2,11 @@
 
 namespace LesserKnown.TrapsAndHelpers
 {
+    /// <summary>
+    /// This class does exactly what you think it does
+    /// It playes ping pong
+    /// And yeah it moves an object from one place and back in a ping pong matter
+    /// </summary>
     public class PingPongMovers: MonoBehaviour
     {
         public float speed = 5f;

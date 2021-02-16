@@ -2,8 +2,15 @@
 using LesserKnown.Manager;
 namespace LesserKnown.TrapsAndHelpers
 {
+    /// <summary>
+    /// This activates something else
+    /// Usually it's for a lever that opens a door or something
+    /// </summary>
     public class PassageActivator: MonoBehaviour
     {
+        /// <summary>
+        /// This delegate is for when you die it will reset the activator to false that way you need to open it again
+        /// </summary>
         private DelegateControler delegate_controller;
         private bool isActive;
         public DeathPlatform[] death_platforms;

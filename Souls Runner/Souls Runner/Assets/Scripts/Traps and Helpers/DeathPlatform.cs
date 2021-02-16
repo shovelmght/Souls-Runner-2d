@@ -4,10 +4,19 @@ using UnityEngine;
 
 namespace LesserKnown.TrapsAndHelpers
 {
+    /// <summary>
+    /// This is a platform that deactivates when you jump on it after a delay
+    /// </summary>
     public class DeathPlatform : MonoBehaviour
     {
         public GameObject[] platforms;
+        /// <summary>
+        /// Time it takes until it will deactivate
+        /// </summary>
         public float trigger_delay = .7f;
+        /// <summary>
+        /// Time it takes until it comes back to normal
+        /// </summary>
         public float return_delay = .9f;
         public bool is_manual;
         private Coroutine trigger_co;

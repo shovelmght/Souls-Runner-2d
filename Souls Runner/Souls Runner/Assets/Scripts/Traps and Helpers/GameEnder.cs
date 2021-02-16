@@ -3,6 +3,10 @@ using LesserKnown.Manager;
 
 namespace LesserKnown.TrapsAndHelpers
 {
+    /// <summary>
+    /// This is the part that ends the game
+    /// Still needs work
+    /// </summary>
     public class GameEnder: MonoBehaviour
     {
         private GameManagement game_manager;

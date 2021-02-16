@@ -58,26 +58,26 @@
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
-    <Compile Include="Assets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorField.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassRPCValue.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNetworkingAboutEditor.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\IFNSerializable.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNetworkingEditor.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassIdentity.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassFieldRPCValue.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ValidationResult.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNRPCTypes.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeAcceptableFieldTypes.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeNetworkingEditor.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeBaseClassType.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorRPCField.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassFieldRPCValue.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\SimpleJSONEditor.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassRewindValue.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassRPCValue.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassFieldValue.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeAcceptableRPCTypes.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassObject.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\IFNSerializable.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassRewindValue.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorButton.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorRPCField.cs" />
-    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeAcceptableFieldTypes.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeEditorField.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassIdentity.cs" />
+    <Compile Include="Assets\Bearded Man Studios Inc\Editor\ForgeClassObject.cs" />
+    <Compile Include="Assets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Bearded Man Studios Inc\Editor\Resources\BMS_Forge_Editor\version.txt" />
