@@ -42,8 +42,13 @@ namespace LesserKnown.Player
             if (controller.wall_jump)
                 controller.Jump_Wall(new Vector2(wall_jump_force, jump_force));
 
-            if (controller.is_fighter && Input.GetKeyDown(KeyCode.F))
-                controller.Attacm();
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (controller.is_fighter)
+                    controller.Attack();
+                else if (!controller.is_fighter)
+                    controller.Pickup();
+            }
         }
 
         private void FixedUpdate()

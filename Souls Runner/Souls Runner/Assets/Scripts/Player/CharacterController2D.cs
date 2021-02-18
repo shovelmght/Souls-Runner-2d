@@ -2,6 +2,7 @@ using LesserKnown.Public;
 using UnityEngine;
 using System.Collections;
 using LesserKnown.Camera;
+using LesserKnown.TrapsAndHelpers;
 
 namespace LesserKnown.Player
 {
@@ -37,6 +38,12 @@ namespace LesserKnown.Player
         public float fall_modifier;
 
         [Space(10)]
+        [Header("Objects Holder")]
+        public Transform box_placer;
+        [HideInInspector]
+        public BoxControl current_picked_box;
+
+        [Space(10)]
         // private PlayerNetwork player_network;
 
         /// <summary>
@@ -68,6 +75,17 @@ namespace LesserKnown.Player
         /// It's for local use only, in network you need to use the network variable
         /// </summary>
         private bool local_left;
+
+        /// <summary>
+        /// Verifies if the player has an object in hands
+        /// </summary>
+        private bool is_holding_object;
+
+        /// <summary>
+        /// Verifies if the player is over a box trigger
+        /// </summary>
+        private bool can_pick_up;
+        
 
         /// <summary>
         /// These boundaries detect if the player is touching something and from what direction
@@ -180,7 +198,7 @@ namespace LesserKnown.Player
         /// <param name="movement_speed">The player movement speed</param>
         public void Move(float movement_speed)
         {
-            if (wall_jump || anim_manager.Is_Attacking())
+            if (wall_jump || anim_manager.Is_Attacking() || anim_manager.Has_Stop_Animation())
                 return;
 
             anim_manager.Climb(false);
@@ -236,6 +254,9 @@ namespace LesserKnown.Player
 
         public void Climb(float movement_speed)
         {
+            if (is_holding_object)
+                return;
+
             if (movement_speed != 0)
                 is_climbing_ladder = true;
 
@@ -276,7 +297,9 @@ namespace LesserKnown.Player
         /// <param name="move_speed">The jump force used to jump when next to a wall</param>
         public void Jump(float jump_force)
         {
-           
+            if (is_holding_object || anim_manager.Has_Stop_Animation())
+                return;
+
                 if (IsTouchingLeft())
                     touching_wall = 1;
                 else if (IsTouchingRight())
@@ -367,21 +390,50 @@ namespace LesserKnown.Player
         {
             if (collision.tag == "Ladder")
                 can_climb_ladder = true;
+
+            if (collision.tag == "Box")
+            {
+                current_picked_box = collision.gameObject.GetComponent<BoxControl>(); 
+                can_pick_up = true;
+            }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.tag == "Ladder")
                 can_climb_ladder = false;
+
+            if (collision.tag == "Box")
+            {
+                current_picked_box = null;
+                can_pick_up = false;
+            }
         }
 
         #region Warrior Region
-        public void Attacm()
+        public void Attack()
         {
             if (anim_manager.Is_Attacking())
                 return;
 
             anim_manager.Attack();
+        }
+        #endregion
+
+        #region Solver Region
+        public void Pickup()
+        {
+            if (anim_manager.Has_Stop_Animation() || !can_pick_up)
+                return;
+
+            if (!is_holding_object)
+                current_picked_box.Start_Animation(anim_manager);
+            else
+                current_picked_box.Throw();
+
+
+            is_holding_object = !is_holding_object;
+            anim_manager.Pick_Throw(is_holding_object);
         }
         #endregion
 
