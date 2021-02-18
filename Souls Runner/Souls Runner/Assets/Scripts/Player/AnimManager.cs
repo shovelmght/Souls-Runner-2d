@@ -9,7 +9,8 @@ namespace LesserKnown.Player
     /// </summary>
     public class AnimManager : MonoBehaviour
     {
-        private CharacterController2D controller;
+        [HideInInspector]
+        public CharacterController2D controller;
         private Animator anim;
         private bool climbing;
 
@@ -17,6 +18,8 @@ namespace LesserKnown.Player
         /// The ID for the Attack animation
         /// </summary>
         private int attack_hash = Animator.StringToHash("Base Layer.Attack");
+        private int pickup_hash = Animator.StringToHash("Base Layer.Object Picked.Pick Up");
+        private int throw_hash = Animator.StringToHash("Base Layer.Object Picked.Throw");
         private AnimatorStateInfo anim_state;
 
         private void Start()
@@ -33,6 +36,10 @@ namespace LesserKnown.Player
 
             //Sets the animation for falling
             anim.SetBool("InAir", (!controller.IsGrounded() && !controller.IsWallFalling() && !climbing) && !controller.IsOnPlatform());
+
+            if (Input.GetKeyDown(KeyCode.G))
+                Die_Anim();
+
         }
 
         /// <summary>
@@ -42,6 +49,28 @@ namespace LesserKnown.Player
         public bool Is_Attacking()
         {
             return anim_state.fullPathHash == attack_hash;
+        }
+
+        /// <summary>
+        /// Verifies if the player is currently picking up things
+        /// </summary>
+        /// <returns></returns>
+        private bool Is_Pickingup()
+        {
+            return anim_state.fullPathHash == pickup_hash;
+        }
+
+        private bool Is_Throwing()
+        {
+            return anim_state.fullPathHash == throw_hash;
+        }
+
+        public bool Has_Stop_Animation()
+        {
+            if (Is_Throwing() || Is_Pickingup())
+                return true;
+
+            return false;
         }
 
         /// <summary>
@@ -134,5 +163,18 @@ namespace LesserKnown.Player
         {
             anim.SetTrigger("Attack");
         }
+
+        /// <summary>
+        /// Picks up the object or throws it depending on the bool
+        /// </summary>
+        /// <param name="is_picking">Checks if we're throwing or picking up</param>
+        public void Pick_Throw(bool is_picking)
+        {
+            if (is_picking)
+                anim.SetTrigger("Pick");
+            else
+                anim.SetTrigger("Throw");
+        }
+        
     }
 }

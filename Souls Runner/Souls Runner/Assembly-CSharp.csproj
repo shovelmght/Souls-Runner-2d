@@ -60,6 +60,7 @@
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\Networking\Forge\Networking\BaseTCP.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\Networking\Forge\Networking\UDPPacketManager.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Examples\Cube Forge\Scripts\CubeForgeGame.cs" />
+    <Compile Include="Assets\Scripts\Traps and Helpers\SpikesBehaviour.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\UserGenerated\TestNetworkObject.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Generated\NetworkObjectFactory.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\TemplateSystem.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\Multiplayer Menu\MultiplayerMenu.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\MainThreadManager.cs" />
     <Compile Include="Assets\Bearded Man Studios Inc\Scripts\Networking\Forge\Networking\LocalNetworkScanning.cs" />
+    <Compile Include="Assets\Scripts\Traps and Helpers\BoxControl.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
