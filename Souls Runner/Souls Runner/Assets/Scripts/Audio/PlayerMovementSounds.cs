@@ -15,9 +15,9 @@ namespace LesserKnown.Audio{
             [Header(" AudioClips Footsteps")]
             public AudioClip [] FS_terrain;
             public AudioClip [] FS_platform;
-            public AudioClip[] currentFootsteps;
+            public AudioClip[] currentFootsteps; //FOR TESTS 
 
-        [   Header(" AudioClips Player Mvt")]
+            [Header(" AudioClips Player Mvt")]
             public AudioClip [] Snd_Jump;
             public AudioClip [] Snd_Climb;
             public AudioClip [] Snd_WallStick;
@@ -27,9 +27,36 @@ namespace LesserKnown.Audio{
             public AudioClip [] Snd_PickUp;
             public AudioClip [] Snd_Throw;
 
-            private AudioClip currentClip;
+            [Header(" Audio Clip - UI ")]
+            public AudioClip Snd_Swap;
 
-            public AudioSource currentPlayerSource;
+            [Header("Set Volume")]
+            public float volumeFSTerrain = 0.5f;
+            public float volumeFS_platform = 0.5f;
+            public float volumeJump = 0.5f;
+            public float volumeWallStick= 0.5f;
+            public float volumeClimb= 0.5f;
+            public float volumePunch= 0.5f;
+            public float volumeFall= 0.5f;
+            public float volumeHit= 0.5f;
+            public float volumeSwap= 0.5f;
+
+            [Header("Set Pitch")]
+            public float pitchFSTerrain = 0.8f;
+            public float pitchFS_platform = 0.8f;
+            public float pitchJump = 0.8f;
+            public float pitchClimb = 0.8f;
+            public float pitchWallStick = 0.8f;
+            public float pitchPunch = 0.8f;
+            public float pitchFall = 0.8f;
+            public float pitchSwap = 0.8f;
+            //Range of value for the randoms
+            private float volRange = 0.4f;
+            private float pitchRange = 0.4f;
+
+            //private values for references
+            private AudioClip currentClip;
+            private AudioSource currentPlayerSource;
             private int togglePlayerSource = 0;
             private string playerActive;
         
@@ -38,7 +65,6 @@ namespace LesserKnown.Audio{
                 currentFootsteps = FS_terrain; //default start                
             }
 
-            // Update is called once per frame
             void Update()
             {
                 // if(!AudioManager.Instance.player.is_active) //useless atm
@@ -66,83 +92,90 @@ namespace LesserKnown.Audio{
                 // else
                 //     togglePlayerSource = 0;
 
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    //Swap caracters sounds
+                    SetRandomVariations(volumeSwap,pitchSwap);
+                    AudioManager.Instance.PlayPlayerSource(Snd_Swap);
+                }
+
+                
             }
 
 
             public void PlayFootsteps()
             {
                 //Debug.Log("FOOTSTEP !");
-                currentPlayerSource.pitch = (float) Random.Range(0.8f,1.2f);
-                currentPlayerSource.volume = (float) Random.Range(0.8f,1.2f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(currentFootsteps),togglePlayerSource);
+                SetRandomVariations(volumeFSTerrain,pitchFSTerrain); //set somthing, by type of FS?
                 AudioManager.Instance.PlayPlayerSource(RandomClip(currentFootsteps));
             }
             public void PlayClimb()
             {
                 //Debug.Log("CLIMB !");
-                currentPlayerSource.pitch = (float) Random.Range(0.8f,1.2f);
-                currentPlayerSource.volume = (float) Random.Range(0.8f,1.2f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Climb),togglePlayerSource);
+                SetRandomVariations(volumeClimb,pitchClimb);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Climb));
             }
              public void PlayPunch()
             {
                 //Debug.Log("PUNCH !");                
-                currentPlayerSource.pitch = (float) Random.Range(0.8f,1.2f);
-                currentPlayerSource.volume = (float) Random.Range(0.8f,1.2f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Whoosh),togglePlayerSource);
+                SetRandomVariations(volumePunch,pitchPunch);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Whoosh));
             }
             public void PlayWallClimb()
             {
                 //Debug.Log("WALL CLIMB!");
-                currentPlayerSource.pitch = (float) Random.Range(0.8f,1.2f);
-                currentPlayerSource.volume = (float) Random.Range(0.8f,1.2f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_WallStick),togglePlayerSource);
+                SetRandomVariations(volumeClimb,pitchClimb);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_WallStick));
             }
             public void PlayJump()
             {
                 //Debug.Log("JUMP !");
-                currentPlayerSource.pitch = (float) Random.Range(1f,1.2f);
-                currentPlayerSource.volume = (float) Random.Range(1f,1.2f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Jump),togglePlayerSource);
+                SetRandomVariations(volumeJump,pitchJump);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Jump));
             }
             public void PlayHit()
             {
                 //Debug.Log("HIT !");
-                currentPlayerSource.pitch = (float) Random.Range(0.8f,1.2f);
-                currentPlayerSource.volume = (float) Random.Range(0.8f,1.2f);
-               //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Hit),togglePlayerSource);
-               AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Hit));
+                SetRandomVariations(volumeHit,0.8f);
+               AudioManager.Instance.PlayPlayerSource(Snd_Hit[0]);
+            }
+           public void PlayTeleport()
+            {
+                //Debug.Log("HIT !");
+                SetRandomVariations(0.8f,0.8f);
+               AudioManager.Instance.PlayPlayerSource(Snd_Hit[1]);
             }
             public void PlayFall()
             {
                 //Debug.Log("FALL !");
-                currentPlayerSource.pitch = (float) Random.Range(0.5f,0.7f);
-                currentPlayerSource.volume = (float) Random.Range(0.5f,0.7f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Fall),togglePlayerSource);
+                SetRandomVariations(volumeFall,pitchFall);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Fall));
             }
             public void PlayPickUp()
             {
-                //Debug.Log("FALL !");
-                currentPlayerSource.pitch = (float) Random.Range(0.5f,0.7f);
-                currentPlayerSource.volume = (float) Random.Range(0.5f,0.7f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Fall),togglePlayerSource);
+                //Debug.Log("Pick up !");
+                SetRandomVariations(0.8f,0.8f);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_PickUp));
             }
             public void PlayThrow()
             {
-                //Debug.Log("FALL !");
-                currentPlayerSource.pitch = (float) Random.Range(0.5f,0.7f);
-                currentPlayerSource.volume = (float) Random.Range(0.5f,0.7f);
-                //AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Fall),togglePlayerSource);
+                //Debug.Log("Throw !");
+                SetRandomVariations(0.8f,0.8f);
                 AudioManager.Instance.PlayPlayerSource(RandomClip(Snd_Throw));
             }
 
-            AudioClip RandomClip(AudioClip[] clipArray)
+            void SetRandomVariations(float vol,float pitch)
+            {
+                float minV = vol - (volRange/2); //could be better 
+                float maxV = (volRange/2) + vol;
+                float minP = pitch - (pitchRange/2);
+                float maxP = (volRange/2) +pitch;
+
+                currentPlayerSource.pitch = (float) Random.Range(minP,maxP);
+                currentPlayerSource.volume = (float) Random.Range(minV,maxV);
+            }
+
+             AudioClip RandomClip(AudioClip[] clipArray)
             {
                 return clipArray[Random.Range(0, clipArray.Length-1)];
             }

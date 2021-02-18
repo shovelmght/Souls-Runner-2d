@@ -1,9 +1,7 @@
 using LesserKnown.Player;
-using LesserKnown.UI;  //maybe some of these namespace using are not necessary
-using LesserKnown.Manager;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LesserKnown.Audio
 {
@@ -26,8 +24,11 @@ namespace LesserKnown.Audio
         public MusicSystem musicSystem;
         private Dictionary<string, System.Action> snd_EvtDict = new Dictionary<string, System.Action>();
         
+        [Header(" Volume Control")]
         //quick and dirty play music on - off .... eventually ill make a better system for mute/unmute, etc.
-        public bool playMusic = false;
+        public bool musicPlayOnStart = false;
+        public float playerVolume = 0.5f;
+        public float musicVolume = 0.5f;
 
 
         [Header(" Audio Sources")]
@@ -36,8 +37,6 @@ namespace LesserKnown.Audio
         //public AudioSource[] playerSources; //for tests
         public AudioSource playerSource;
 
-        [Header(" Audio Clip - UI ")]
-        public AudioClip Snd_Swap;
 
         void Start()
         {
@@ -51,7 +50,14 @@ namespace LesserKnown.Audio
             musicSystem = GetComponent<MusicSystem>();
             InitDict();
 
-
+            //volume musique speakers 
+            foreach (AudioSource s in musicSources)
+            {
+               s.volume = musicVolume; 
+            }
+            //volume player speakers 
+            playerSource.volume = playerVolume;
+            
             //for tests ...
             //playerSources = GameObject.FindGameObjectWithTag("Player").GetComponents<AudioSource>(); //somehow this doesnt work
             //players = GameObject.FindGameObjectWithTag("Player").GetComponents<CharacterController2D>(); //somehow this doesnt work
@@ -60,8 +66,6 @@ namespace LesserKnown.Audio
         // Update is called once per frame
         void Update()
         {
-
-            PlaySwap(); //play swap snd. probably should be somewhere else but ftm it works
 
         }
 
@@ -105,20 +109,13 @@ namespace LesserKnown.Audio
             snd_EvtDict ["jump"] = Snd_playerMvt.PlayJump;
             snd_EvtDict ["punch"] = Snd_playerMvt.PlayPunch;
             snd_EvtDict ["hit"] = Snd_playerMvt.PlayHit;
+            snd_EvtDict ["teleport"] = Snd_playerMvt.PlayTeleport;
             snd_EvtDict ["fall"] = Snd_playerMvt.PlayFall;
             snd_EvtDict ["pickup"] = Snd_playerMvt.PlayPickUp;
             snd_EvtDict ["throw"] = Snd_playerMvt.PlayThrow;
 
         }
 
-        //This could be somewhere else but Ftm ill leave it here
-        void PlaySwap()
-        {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                PlayPlayerSource(Snd_Swap);
-            }
-         }
 
         public AudioSource[] GetMusicSources()
         {

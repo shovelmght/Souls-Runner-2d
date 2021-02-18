@@ -16,14 +16,9 @@ public class MusicSystem : MonoBehaviour
         musicSpeakers = AudioManager.Instance.GetMusicSources();
 
         //quick and dirty play music MUTE/UNMUTE ... will do a nicer version later
-        if(AudioManager.Instance.playMusic) 
+        if(AudioManager.Instance.musicPlayOnStart) 
             PlayMusicScene();
-        
-        //quick and dirty play music volume ... Will do a nicer version later
-        foreach (AudioSource s in musicSpeakers)
-        {
-            s.volume = 0.5f; 
-        }
+    
     }
 
     void Update()
