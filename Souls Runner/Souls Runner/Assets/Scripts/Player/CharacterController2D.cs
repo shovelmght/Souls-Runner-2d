@@ -231,6 +231,15 @@ namespace LesserKnown.Player
                 Flip(true);
         }
 
+        /// <summary>
+        /// Frank : used by Spike Traps script
+        /// </summary>
+        public void Dead()
+        {
+            Debug.Log("hit detected");
+            anim_manager.Die_Anim();
+        }
+
         public void Get_Hit(int amount)
         {
             is_invicible = true;
@@ -409,6 +418,7 @@ namespace LesserKnown.Player
                 can_pick_up = false;
             }
         }
+
 
         #region Warrior Region
         public void Attack()

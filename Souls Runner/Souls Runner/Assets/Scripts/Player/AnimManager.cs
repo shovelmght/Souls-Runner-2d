@@ -1,3 +1,4 @@
+using LesserKnown.Audio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -175,6 +176,14 @@ namespace LesserKnown.Player
             else
                 anim.SetTrigger("Throw");
         }
-        
+
+        /// <summary>
+        /// Play Sounds related to Animator Events
+        /// </summary>
+        public void PlaySndEvent(string call)
+        {
+            //Debug.Log("Anim manager Event call");
+            AudioManager.Instance.PlaySndEvent(call);
+        }
     }
 }
