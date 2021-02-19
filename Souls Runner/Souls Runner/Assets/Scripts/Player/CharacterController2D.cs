@@ -31,7 +31,7 @@ namespace LesserKnown.Player
 
         [Space(10)]
         [Header("Modifiers")]
-        [Range(1f,2f)]
+        [Range(1f, 2f)]
         /// <summary>
         /// This is the fall speed modifier
         /// </summary>
@@ -85,7 +85,7 @@ namespace LesserKnown.Player
         /// Verifies if the player is over a box trigger
         /// </summary>
         private bool can_pick_up;
-        
+
 
         /// <summary>
         /// These boundaries detect if the player is touching something and from what direction
@@ -96,7 +96,7 @@ namespace LesserKnown.Player
         public bool is_active;
         public bool is_fighter;
         public GameObject player_indicator;
-        
+
 
         [Space(10)]
         [Header("Boundaries Ground")]
@@ -121,11 +121,12 @@ namespace LesserKnown.Player
             anim_manager = GetComponent<AnimManager>();
 
             //This is for network use only, it's not for this project
-           // player_network = GetComponent<PlayerNetwork>();
+            // player_network = GetComponent<PlayerNetwork>();
             p_collider = GetComponent<Collider2D>();
             cam = UnityEngine.Camera.main.GetComponent<CameraFollow>();
 
             Swap_Character();
+            ChangeLayer();  //--------------------------------------change layer to player/terrain for character can jump head of each other
         }
 
         private void Update()
@@ -157,6 +158,8 @@ namespace LesserKnown.Player
             if (Input.GetKeyDown(KeyCode.C))
             {
                 Swap_Character();
+                ChangeLayer();  //--------------------------------------change layer to player/terrain for character can jump head of each other
+
             }
 
         }
@@ -186,12 +189,26 @@ namespace LesserKnown.Player
         /// </summary>
         public void Swap_Character()
         {
+     
             is_active = !is_active;
 
             if (is_active)
                 cam.Set_Camera_Local(transform);
+              
         }
-
+   
+            void ChangeLayer()// ---------------------change layer to player/terrain for character can jump head of each other
+        {
+            if (is_active)
+            {
+                gameObject.layer = 6;
+            }
+            if (!is_active)
+            {
+                gameObject.layer = 3;
+            }      
+        }
+     
         /// <summary>
         /// Move player, also checks for all the movement changes
         /// </summary>
@@ -204,10 +221,10 @@ namespace LesserKnown.Player
             anim_manager.Climb(false);
             anim_manager.Climb_Stay(false);
 
-            if(movement_speed != 0)
-            is_climbing_ladder = false;
+            if (movement_speed != 0)
+                is_climbing_ladder = false;
 
-            if(!IsGrounded() && !IsOnPlatform())
+            if (!IsGrounded() && !IsOnPlatform())
             {
                 if (IsTouchingRight())
                 {
@@ -243,10 +260,10 @@ namespace LesserKnown.Player
         public void Get_Hit(int amount)
         {
             is_invicible = true;
-            anim_manager.Get_Hit();            
+            anim_manager.Get_Hit();
             bool death = PublicVariables.Lose_Health(amount);
 
-            if(death)
+            if (death)
             {
                 anim_manager.Die_Anim();
                 //Disable Network Player
@@ -279,7 +296,7 @@ namespace LesserKnown.Player
             if (!is_climbing_ladder)
                 return;
 
-            if(movement_speed == 0)
+            if (movement_speed == 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
                 anim_manager.Climb_Stay(true);
@@ -309,13 +326,13 @@ namespace LesserKnown.Player
             if (is_holding_object || anim_manager.Has_Stop_Animation())
                 return;
 
-                if (IsTouchingLeft())
-                    touching_wall = 1;
-                else if (IsTouchingRight())
-                    touching_wall = -1;
+            if (IsTouchingLeft())
+                touching_wall = 1;
+            else if (IsTouchingRight())
+                touching_wall = -1;
 
-                if ((IsTouchingLeft() || IsTouchingRight()) && !IsGrounded())
-                    wall_jump = true;
+            if ((IsTouchingLeft() || IsTouchingRight()) && !IsGrounded())
+                wall_jump = true;
 
             if (wall_jump)
             {
@@ -326,14 +343,14 @@ namespace LesserKnown.Player
             if (!IsGrounded() && !IsOnPlatform())
                 return;
 
-           
-                anim_manager.Jump_Anim();
-                rb.velocity = new Vector2(rb.velocity.x, jump_force);          
+
+            anim_manager.Jump_Anim();
+            rb.velocity = new Vector2(rb.velocity.x, jump_force);
 
             anim_manager.Climb(false);
             anim_manager.Climb_Stay(false);
             is_climbing_ladder = false;
-            
+
         }
 
         public void Jump_Wall(Vector2 jump_force)
@@ -355,16 +372,16 @@ namespace LesserKnown.Player
         /// </summary>
         public bool IsGrounded()
         {
-            
-               return Physics2D.OverlapBox(new Vector2(transform.position.x + boundary_placement.x, transform.position.y - boundary_placement.y), new Vector2(boundary_size.x, boundary_size.y), 0f, ground);
-            
+
+            return Physics2D.OverlapBox(new Vector2(transform.position.x + boundary_placement.x, transform.position.y - boundary_placement.y), new Vector2(boundary_size.x, boundary_size.y), 0f, ground);
+
         }
 
         public bool IsOnPlatform()
         {
-            
-                return Physics2D.OverlapBox(new Vector2(transform.position.x + boundary_placement.x, transform.position.y - boundary_placement.y), new Vector2(boundary_size.x, boundary_size.y), 0f, platform);
-            
+
+            return Physics2D.OverlapBox(new Vector2(transform.position.x + boundary_placement.x, transform.position.y - boundary_placement.y), new Vector2(boundary_size.x, boundary_size.y), 0f, platform);
+
         }
 
         /// <summary>
@@ -372,9 +389,9 @@ namespace LesserKnown.Player
         /// </summary>
         public bool IsTouchingLeft()
         {
-            
-                return Physics2D.OverlapBox(new Vector2(transform.position.x - boundary_placement_l.x, transform.position.y - boundary_placement_l.y), new Vector2(boundary_size_l.x, boundary_size_l.y), 0f, ground);
-            
+
+            return Physics2D.OverlapBox(new Vector2(transform.position.x - boundary_placement_l.x, transform.position.y - boundary_placement_l.y), new Vector2(boundary_size_l.x, boundary_size_l.y), 0f, ground);
+
         }
 
         /// <summary>
@@ -382,8 +399,8 @@ namespace LesserKnown.Player
         /// </summary>
         public bool IsTouchingRight()
         {
-               return Physics2D.OverlapBox(new Vector2(transform.position.x + boundary_placement_r.x, transform.position.y - boundary_placement_r.y), new Vector2(boundary_size_r.x, boundary_size_r.y), 0f, ground);
-            
+            return Physics2D.OverlapBox(new Vector2(transform.position.x + boundary_placement_r.x, transform.position.y - boundary_placement_r.y), new Vector2(boundary_size_r.x, boundary_size_r.y), 0f, ground);
+
         }
 
         /// <summary>
@@ -391,7 +408,7 @@ namespace LesserKnown.Player
         /// </summary>
         public bool IsWallFalling()
         {
-             return (IsTouchingLeft() || IsTouchingRight()) && !IsGrounded(); 
+            return (IsTouchingLeft() || IsTouchingRight()) && !IsGrounded();
         }
         #endregion
 
@@ -402,9 +419,12 @@ namespace LesserKnown.Player
 
             if (collision.tag == "Box")
             {
-                current_picked_box = collision.gameObject.GetComponent<BoxControl>(); 
+                current_picked_box = collision.gameObject.GetComponent<BoxControl>();
                 can_pick_up = true;
             }
+            if (collision.tag == "LadderTree" && is_fighter)        // For fighter can climb tree   must a tag "LadderTree"
+                can_climb_ladder = true;
+
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -417,6 +437,8 @@ namespace LesserKnown.Player
                 current_picked_box = null;
                 can_pick_up = false;
             }
+            if (collision.tag == "LadderTree" && is_fighter)       // For fighter can climb tree   must a tag "LadderTree"
+                can_climb_ladder = false;
         }
 
 
@@ -445,6 +467,13 @@ namespace LesserKnown.Player
             is_holding_object = !is_holding_object;
             anim_manager.Pick_Throw(is_holding_object);
         }
+
+        public bool IsLookingLeft()  // --------------------- for throw box right or left
+        {
+
+            return local_left;
+
+        }
         #endregion
 
         private void OnDrawGizmosSelected()
@@ -459,6 +488,6 @@ namespace LesserKnown.Player
             Gizmos.DrawCube(new Vector2(transform.position.x + boundary_placement_r.x, transform.position.y - boundary_placement_r.y), new Vector2(boundary_size_r.x, boundary_size_r.y));
 
         }
-        
+
     }
 }

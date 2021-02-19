@@ -8,6 +8,7 @@ TagManager:
   - Ladder
   - Platform
   - Box
+  - LadderTree
   layers:
   - Default
   - TransparentFX

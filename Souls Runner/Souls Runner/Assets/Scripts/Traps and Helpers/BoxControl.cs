@@ -6,7 +6,8 @@ namespace LesserKnown.TrapsAndHelpers
 {
     public class BoxControl : MonoBehaviour
     {
-       private Rigidbody2D rb;
+        public CharacterController2D player; // -----------------------Must add solver to this object reference
+        private Rigidbody2D rb;
         private Collider2D m_collider;
         private bool is_picked;
         private void Start()
@@ -31,7 +32,10 @@ namespace LesserKnown.TrapsAndHelpers
             transform.SetParent(null);
             rb.bodyType = RigidbodyType2D.Dynamic;
             m_collider.isTrigger = false;
-            rb.AddForce(new Vector2(8, 2.5f), ForceMode2D.Impulse);
+            if (player.IsLookingLeft())                                 // ----------if character look left
+                rb.AddForce(new Vector2(-8, 2.5f), ForceMode2D.Impulse); //--------- throw box left side
+            if (!player.IsLookingLeft())                                //---------- if character look right
+                rb.AddForce(new Vector2(8, 2.5f), ForceMode2D.Impulse); //-------------throw box right side
             is_picked = false;
         }
 
