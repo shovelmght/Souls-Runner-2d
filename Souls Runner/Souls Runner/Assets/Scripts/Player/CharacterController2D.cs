@@ -86,6 +86,8 @@ namespace LesserKnown.Player
         /// </summary>
         private bool can_pick_up;
 
+        public bool horizontalEnable;
+
 
         /// <summary>
         /// These boundaries detect if the player is touching something and from what direction
@@ -116,6 +118,7 @@ namespace LesserKnown.Player
 
         private void Start()
         {
+            horizontalEnable = true;
             rb = GetComponent<Rigidbody2D>();
             player_sprite = GetComponent<SpriteRenderer>();
             anim_manager = GetComponent<AnimManager>();
@@ -337,8 +340,12 @@ namespace LesserKnown.Player
             if (wall_jump)
             {
                 Invoke("Wall_Jump", 0.08f);
-                return;
+  
+                StartCoroutine(DontMove());//--------------------------------------------Stop move horizontal after wall jump
+
             }
+
+
 
             if (!IsGrounded() && !IsOnPlatform())
                 return;
@@ -351,6 +358,13 @@ namespace LesserKnown.Player
             anim_manager.Climb_Stay(false);
             is_climbing_ladder = false;
 
+        }
+        private IEnumerator DontMove()
+        {
+    
+            horizontalEnable = false;  //--------------------------------------------tell if player can move after wall jump
+            yield return new WaitForSeconds(0.25f);
+            horizontalEnable = true; //--------------------------------------------tell if player can move after wall jump
         }
 
         public void Jump_Wall(Vector2 jump_force)

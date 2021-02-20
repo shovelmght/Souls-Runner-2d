@@ -21,6 +21,7 @@ namespace LesserKnown.Player
         [Space(10)]
         [Header("Player Input Keys")]
         public KeyCode jump_key;
+     
 
         private CameraFollow cam;
 
@@ -49,17 +50,24 @@ namespace LesserKnown.Player
                 else if (!controller.is_fighter)
                     controller.Pickup();
             }
+
+               
         }
 
         private void FixedUpdate()
         {
+
             if (!controller.is_active)
                 return;
 
             var h = Input.GetAxisRaw("Horizontal");
             var v = Input.GetAxisRaw("Vertical");
+            if (controller.horizontalEnable)
+            {
 
-            controller.Move(h * movement_speed);
+                controller.Move(h * movement_speed);
+            }
+              
             controller.Climb(v * climbing_speed);
         }
 

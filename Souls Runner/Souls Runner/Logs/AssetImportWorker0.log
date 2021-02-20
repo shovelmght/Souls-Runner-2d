@@ -1,0 +1,443 @@
+Using pre-set license
+Built from '2020.2/staging' branch; Version is '2020.2.3f1 (8ff31bc5bf5b) revision 9433883'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.685; Version 2004; 64bit' Language: 'fr' Physical Memory: 16178 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Users\franck\Unity3d\2020.2.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/franck/Unity3d/Souls-Runner-2d/Souls Runner/Souls Runner
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64562
+Successfully changed project path to: C:/Users/franck/Unity3d/Souls-Runner-2d/Souls Runner/Souls Runner
+C:/Users/franck/Unity3d/Souls-Runner-2d/Souls Runner/Souls Runner
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 61.18 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.3f1 (8ff31bc5bf5b)
+[Subsystems] Discovering subsystems at path C:/Users/franck/Unity3d/2020.2.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/franck/Unity3d/Souls-Runner-2d/Souls Runner/Souls Runner/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 with Max-Q Design (ID=0x1c20)
+    Vendor:   
+    VRAM:     6052 MB
+    Driver:   27.21.14.6109
+Initialize mono
+Mono path[0] = 'C:/Users/franck/Unity3d/2020.2.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/franck/Unity3d/2020.2.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Users/franck/Unity3d/2020.2.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56768
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/franck/Unity3d/2020.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002528 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 53.60 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.185 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001006 seconds.
+Begin MonoManager ReloadAssembly
+OnLevelWasLoaded was found on GameManagement
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 65.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.729 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.57 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1983 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.6 MB.
+System memory in use after: 91.6 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2426.
+Total: 6.304400 ms (FindLiveObjects: 1.174600 ms CreateObjectMapping: 1.259500 ms MarkObjects: 3.647600 ms  DeleteObjects: 0.219100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/04B_25__.TTF
+  artifactKey: Guid(b0e4d4ae4d25149ce858b6cacf6d590f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/04B_25__.TTF using Guid(b0e4d4ae4d25149ce858b6cacf6d590f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7abb8576b5058780a2e2281f08261417') in 0.827868 seconds
+  Import took 1.330516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/Bearded Man Studios Inc/Modules/Prefabs/EventSystem.prefab
+  artifactKey: Guid(a542afcebd359804799ebc0af3dd0ddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Bearded Man Studios Inc/Modules/Prefabs/EventSystem.prefab using Guid(a542afcebd359804799ebc0af3dd0ddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2b2f29eeecf8fcde1af64d19696dbfd') in 0.050579 seconds
+  Import took 0.130182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/Picory.ttf
+  artifactKey: Guid(488f6a8f14a5542dc8103402d1b20b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/Picory.ttf using Guid(488f6a8f14a5542dc8103402d1b20b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7678fd7b82675a7deb73d451e9214e9') in 0.205785 seconds
+  Import took 0.224284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/TileMap/Palettes/PrefabBrushes/Crate Brush.asset
+  artifactKey: Guid(ed6e858b17b29460c8c2339bb62136e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/TileMap/Palettes/PrefabBrushes/Crate Brush.asset using Guid(ed6e858b17b29460c8c2339bb62136e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8517a8a500cfa1069ac13c02178ac22') in 0.012386 seconds
+  Import took 0.046833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Prefabs/Crate.prefab
+  artifactKey: Guid(0ba08686b60d54520b0a3332f21cb0d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Prefabs/Crate.prefab using Guid(0ba08686b60d54520b0a3332f21cb0d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22d29c78e42662ed333c054e738f4ed1') in 0.063344 seconds
+  Import took 0.113840 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52d993d750454ab4c6c7670216903a6d') in 0.313663 seconds
+  Import took 0.346845 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf
+  artifactKey: Guid(585188cdc4600544eb408bee749e4b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf using Guid(585188cdc4600544eb408bee749e4b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '135cce28093f1bdddaaffd77c57796ec') in 0.041050 seconds
+  Import took 0.077338 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/Rise.ttf
+  artifactKey: Guid(a81166b5ddcd44f0d801146a8bea193d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/Rise.ttf using Guid(a81166b5ddcd44f0d801146a8bea193d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6335e7e8fff9f605746bdb93a234a7d5') in 0.030005 seconds
+  Import took 0.049630 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/Thicket Mono.ttf
+  artifactKey: Guid(f498a5992332e44dd8a7c13029695978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Fonts/Thicket Mono.ttf using Guid(f498a5992332e44dd8a7c13029695978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5221b1c1e9dfa29de14889d7dafc5db0') in 0.036565 seconds
+  Import took 0.040391 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.180201 seconds.
+  path: Assets/AudioClips/OTHER/8bits_3.wav
+  artifactKey: Guid(0de6dafca88a4634ab5298bc006b64f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AudioClips/OTHER/8bits_3.wav using Guid(0de6dafca88a4634ab5298bc006b64f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d81be4ecc55f652b6044262ba8a8c82') in 0.548677 seconds
+  Import took 0.582324 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/Preview/background-layrered-preview.png
+  artifactKey: Guid(6f37ee654aa4a4da2a60435f364cbc22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/Preview/background-layrered-preview.png using Guid(6f37ee654aa4a4da2a60435f364cbc22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6fbdc413a104d4476299fbf1dfca1e8') in 0.091070 seconds
+  Import took 0.121964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-sky.png
+  artifactKey: Guid(23c213e6363304127a2d6656f72e43b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-sky.png using Guid(23c213e6363304127a2d6656f72e43b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd252d2096ba2962273bf2a5a338cd75') in 0.049723 seconds
+  Import took 0.074351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-sky.png
+  artifactKey: Guid(9b6edf6ff4c7a4abc93708c4b1de7bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-sky.png using Guid(9b6edf6ff4c7a4abc93708c4b1de7bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd572def04468daa383b77486031467f8') in 0.045850 seconds
+  Import took 0.087667 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000630 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-hills2.png
+  artifactKey: Guid(2ac6d248f349141fb8cb9505d088737e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-hills2.png using Guid(2ac6d248f349141fb8cb9505d088737e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '728b2f7cd639b9c63f3f084d6056490d') in 0.039061 seconds
+  Import took 0.058567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-layrered-preview.png
+  artifactKey: Guid(58b5c6bcc55eb41ef850e33f93f98462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-layrered-preview.png using Guid(58b5c6bcc55eb41ef850e33f93f98462) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8551b06f2a0594087156349a290fda02') in 0.039732 seconds
+  Import took 0.047414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-hills1.png
+  artifactKey: Guid(09069a310473048d4bc3dbe8906bbf08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-hills1.png using Guid(09069a310473048d4bc3dbe8906bbf08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '035ca700880b23455c6473d7d82bdd32') in 0.047436 seconds
+  Import took 0.075306 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-trees.png
+  artifactKey: Guid(11e6012889b37467fae2ca1eadcb31db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-trees.png using Guid(11e6012889b37467fae2ca1eadcb31db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '636e7b616d7f24d31add5e3cb875d2ba') in 0.051425 seconds
+  Import took 0.059727 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-trees.png
+  artifactKey: Guid(e15944125ee7f40d58771844497b2142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/background-trees.png using Guid(e15944125ee7f40d58771844497b2142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b40c5f7afabb5c09a01e40385d360668') in 0.025119 seconds
+  Import took 0.045254 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-hills2.png
+  artifactKey: Guid(66c483d410d7943bc8ff5f0158425dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-hills2.png using Guid(66c483d410d7943bc8ff5f0158425dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc39557ed7dd7612a4a744eed66eaf98') in 0.044675 seconds
+  Import took 0.069234 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-hills1.png
+  artifactKey: Guid(24b963700b9f346aebc8e18076bcb232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/background-hills1.png using Guid(24b963700b9f346aebc8e18076bcb232) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef83b274684fcf5fa7d00382b49b8d6') in 0.047029 seconds
+  Import took 0.094583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.151574 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e19359af9e3e219cb066e7ea933152e') in 0.135355 seconds
+  Import took 0.200014 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png
+  artifactKey: Guid(b324a4685d480b346b084e8a5dbacbde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png using Guid(b324a4685d480b346b084e8a5dbacbde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d7ab5812050892cdce6f54fff76d335') in 0.056295 seconds
+  Import took 0.192474 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001835 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.154 seconds
+Platform modules already initialized, skipping
+OnLevelWasLoaded was found on GameManagement
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+
+Refreshing native plugins compatible for Editor in 0.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1965 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.5 MB.
+System memory in use after: 94.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2480.
+Total: 7.074500 ms (FindLiveObjects: 1.078900 ms CreateObjectMapping: 0.605800 ms MarkObjects: 5.195400 ms  DeleteObjects: 0.189400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 261.138473 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds
+  artifactKey: Guid(4fe6b423a92ebaf4bb564f9457fa74e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds using Guid(4fe6b423a92ebaf4bb564f9457fa74e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e61b44bbee7003b6227368ee2c4c5f0d') in 0.021030 seconds
+  Import took 0.130606 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.865676 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png
+  artifactKey: Guid(cd0a2c1b2c014ba4c80c1df786e150e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png using Guid(cd0a2c1b2c014ba4c80c1df786e150e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7c75417d525c635d947b268f9d841bc') in 0.090180 seconds
+  Import took 0.143688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png
+  artifactKey: Guid(097782735540f2d4db5606eae04ae6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png using Guid(097782735540f2d4db5606eae04ae6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1f61411a69619381deb740fedd0624d') in 0.038839 seconds
+  Import took 0.062495 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000550 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png
+  artifactKey: Guid(7927b9032dc11e841af3f9a1353d7ecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png using Guid(7927b9032dc11e841af3f9a1353d7ecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a8a0dc24829f8fce65186d3ea1a4ad1') in 0.059349 seconds
+  Import took 0.078806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png
+  artifactKey: Guid(b8467ea5fbaf9ba42908de6411bd443d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png using Guid(b8467ea5fbaf9ba42908de6411bd443d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c52a760fade35f3acf9c989d9a38b4b') in 0.076638 seconds
+  Import took 0.106536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png
+  artifactKey: Guid(6304ad603f150b649b764d29bbc2a87b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png using Guid(6304ad603f150b649b764d29bbc2a87b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f309a1deccc8ab0f53f60f09b0e8645') in 0.048342 seconds
+  Import took 0.068769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png
+  artifactKey: Guid(c8585b68a92b5d440992ddd7d1b1a3d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png using Guid(c8585b68a92b5d440992ddd7d1b1a3d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25953babec12ef54cc06ed91c3ca518') in 0.064268 seconds
+  Import took 0.081178 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002244 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.304 seconds
+Platform modules already initialized, skipping
+OnLevelWasLoaded was found on GameManagement
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+
+Refreshing native plugins compatible for Editor in 0.51 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1965 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 94.6 MB.
+System memory in use after: 94.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2485.
+Total: 4.113300 ms (FindLiveObjects: 0.597500 ms CreateObjectMapping: 0.193800 ms MarkObjects: 3.170700 ms  DeleteObjects: 0.148200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.121268 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/Preview/environment-sample.png
+  artifactKey: Guid(31ef54d7ba007438f8cfd117262b8ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/Preview/environment-sample.png using Guid(31ef54d7ba007438f8cfd117262b8ffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd137d33cebc5ca7588bdde5ad6a690d8') in 0.093895 seconds
+  Import took 0.399927 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.552353 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/forest-tileset.png
+  artifactKey: Guid(787d82de1123e435b8a60d5afb4224f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Green Greens Forest Pixel Art Platformer Pack/Tiles+BG/forest-tileset.png using Guid(787d82de1123e435b8a60d5afb4224f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '215250eb915ba6c83fb576b56a6a969c') in 0.107336 seconds
+  Import took 0.128838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.045094 seconds.
+  path: Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/forest-tileset_16x16.png
+  artifactKey: Guid(3e2806fe51adb4c78a361777b2ab1df5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Platformer-Asset-Pack-Forest/Demo/Artwork/Tiles/forest-tileset_16x16.png using Guid(3e2806fe51adb4c78a361777b2ab1df5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '452648a643e3dc45b0673b5be6c4da28') in 1.741918 seconds
+  Import took 2.073759 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001746 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.176 seconds
+Platform modules already initialized, skipping
+OnLevelWasLoaded was found on GameManagement
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+
+Refreshing native plugins compatible for Editor in 0.52 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1965 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.4 MB.
+System memory in use after: 95.4 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2495.
+Total: 2.139500 ms (FindLiveObjects: 0.254000 ms CreateObjectMapping: 0.095600 ms MarkObjects: 1.669400 ms  DeleteObjects: 0.119100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001558 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.071 seconds
+Platform modules already initialized, skipping
+OnLevelWasLoaded was found on GameManagement
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+
+Refreshing native plugins compatible for Editor in 0.98 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1965 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.4 MB.
+System memory in use after: 95.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2498.
+Total: 3.761700 ms (FindLiveObjects: 0.435600 ms CreateObjectMapping: 0.194200 ms MarkObjects: 2.863400 ms  DeleteObjects: 0.265100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
